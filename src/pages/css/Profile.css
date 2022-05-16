@@ -1,0 +1,29 @@
+.profile {
+  padding: 2% 5%;
+}
+
+.profile-details {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+.profile-image {
+  padding: 5%;
+  text-align: center;
+}
+
+.profile-item {
+  padding: 2%;
+}
+
+.profile-item-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.profile-item-value {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #99c4c8;
+}

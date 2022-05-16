@@ -1,0 +1,20 @@
+@media (min-width: 990px) {
+  .bookSection {
+    margin: 0% 5%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    text-align: center;
+  }
+}
+@media (max-width: 990px) {
+  .bookSection {
+    margin: 0% 2%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    text-align: center;
+  }
+}

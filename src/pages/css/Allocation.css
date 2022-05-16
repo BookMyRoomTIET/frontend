@@ -1,0 +1,64 @@
+@media (min-width: 990px) {
+  .progressBar {
+    margin: 3% 3%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    background: radial-gradient(
+      circle,
+      rgba(249, 249, 249, 0.2) 0%,
+      rgba(0, 0, 0, 0.69) 0%
+    );
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .contentSection {
+    margin: 0% 20%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    background: radial-gradient(
+      circle,
+      rgba(249, 249, 249, 0.2) 0%,
+      rgba(0, 0, 0, 0.69) 0%
+    );
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+@media (max-width: 990px) {
+  .progressBar {
+    margin: 1% 2%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    background: radial-gradient(
+      circle,
+      rgba(249, 249, 249, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 0%
+    );
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  .contentSection {
+    margin: 0% 2%;
+    padding: 2%;
+    border-radius: 25px;
+    position: relative;
+    color: aliceblue;
+    background: radial-gradient(
+      circle,
+      rgba(249, 249, 249, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 0%
+    );
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+}
