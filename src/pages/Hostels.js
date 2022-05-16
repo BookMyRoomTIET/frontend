@@ -8,7 +8,7 @@ const Hostels = () => {
     <div>
       <Container fluid>
         <Row>
-          <Col lg={3}>
+          <Col key="1" lg={3}>
             <HostelCard />
           </Col>
           <Col lg={3}>

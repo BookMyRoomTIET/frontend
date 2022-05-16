@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -43,12 +44,14 @@ const HostelCard = () => {
       {" "}
       <Card className="hostelCard" sx={{ maxWidth: 345, margin: "3%" }}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="http://www.thapar.edu/images/hostel/hostelA1.jpg"
-            alt="green iguana"
-          />
+          <Link to={`/hostel/1`}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="http://www.thapar.edu/images/hostel/hostelA1.jpg"
+              alt="green iguana"
+            />
+          </Link>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               Hostel K

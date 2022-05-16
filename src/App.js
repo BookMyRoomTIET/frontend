@@ -5,7 +5,9 @@ import AboutUs from "./pages/AboutUs";
 import Hostels from "./pages/Hostels";
 import Profile from "./pages/Profile";
 import Allocation from "./pages/Allocation";
+import HostelScreen from "./pages/HostelScreen";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -28,12 +30,16 @@ function App() {
             <Route path="/hostels" element={<Hostels />} />
           </Routes>
           <Routes>
+            <Route path="/hostel/:id" element={<HostelScreen />} />
+          </Routes>
+          <Routes>
             <Route path="/allocation" element={<Allocation />} />
           </Routes>
           <Routes>
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
+        <Footer />
       </Router>
     </div>
   );
