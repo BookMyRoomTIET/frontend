@@ -60,7 +60,7 @@ const Preference = () => {
               <input
                 className="formInput"
                 placeholder="9.75"
-                {...register("firstName", {
+                {...register("cgpa", {
                   required: true,
                   maxLength: 20,
                   pattern: /^[A-Za-z]+$/i + " ",

@@ -15,9 +15,6 @@ function App() {
       <Router>
         <main>
           <Routes>
-            <Route exact path="/" element={<SignUp />} />
-          </Routes>
-          <Routes>
             <Route path="/login" element={<SignIn />} />
           </Routes>
           <Routes>
@@ -37,6 +34,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/profile" element={<Profile />} />
+          </Routes>
+          <Routes>
+            <Route exact path="/" element={<SignUp />} />
           </Routes>
         </main>
         <Footer />
