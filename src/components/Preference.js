@@ -75,27 +75,35 @@ const Preference = () => {
               <select className="preference" {...register("Preference 1")}>
                 <option value="Hostel M">Hostel M</option>
                 <option value=" Hostel K"> Hostel K</option>
+                <option value="Hostel L">Hostel L</option>
+                <option value="Hostel C">Hostel C</option>
               </select>
             </Col>
             <Col lg={3}>
               <label className="formLabel">Preference 2</label>
-              <select className="preference" {...register("Preference 1")}>
+              <select className="preference" {...register("Preference 2")}>
                 <option value="Hostel M">Hostel M</option>
                 <option value=" Hostel K"> Hostel K</option>
+                <option value="Hostel L">Hostel L</option>
+                <option value="Hostel C">Hostel C</option>
               </select>
             </Col>
             <Col lg={3}>
               <label className="formLabel">Preference 3</label>
-              <select className="preference" {...register("Preference 1")}>
+              <select className="preference" {...register("Preference 3")}>
                 <option value="Hostel M">Hostel M</option>
                 <option value=" Hostel K"> Hostel K</option>
+                <option value="Hostel L">Hostel L</option>
+                <option value="Hostel C">Hostel C</option>
               </select>
             </Col>
             <Col lg={3}>
               <label className="formLabel">Preference 4</label>
-              <select className="preference" {...register("Preference 1")}>
+              <select className="preference" {...register("Preference 4")}>
                 <option value="Hostel M">Hostel M</option>
                 <option value=" Hostel K"> Hostel K</option>
+                <option value="Hostel L">Hostel L</option>
+                <option value="Hostel C">Hostel C</option>
               </select>
             </Col>
           </Row>

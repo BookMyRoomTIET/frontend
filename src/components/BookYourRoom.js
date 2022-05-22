@@ -68,7 +68,9 @@ const BookYourRoom = () => {
 
           <Row>
             <Col lg={12}>
-              <img src="https://www.onlinehostel.in/hostelI/maps/map.jpg" />
+              <img style={{ width: "100%" }} src="images/k1.jpg" alt="room" />
+              <img style={{ width: "100%" }} src="images/k2.jpg" alt="room" />
+              <img style={{ width: "100%" }} src="images/k3.jpg" alt="room" />
             </Col>
           </Row>
 

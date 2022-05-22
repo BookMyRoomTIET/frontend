@@ -1,10 +1,10 @@
 import * as React from "react";
+import axios from "axios";
+import { Modal } from "react-bootstrap";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -15,23 +15,6 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import HeaderLanding from "../components/HeaderLanding";
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const theme = createTheme();
 
@@ -68,6 +51,9 @@ export default function SignUp() {
   const [gender, setGender] = React.useState("M");
 
   const [branch, setBranch] = React.useState("CSE");
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
   const branches = [
     {
       value: "CSE",
@@ -109,15 +95,43 @@ export default function SignUp() {
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
-      email: data.get("email"),
+      name: data.get("firstName") + data.get("lastName"),
+      registration_id: data.get("rollNum"),
       password: data.get("password"),
+      email: data.get("email"),
+      sex: gender,
+      phone: data.get("phoneNum"),
+      branch: branch,
+      grad_year: gradYear,
     });
+    axios
+      .post("http://127.0.0.1:8000/user/register/student/", {
+        name: data.get("firstName") + data.get("lastName"),
+        registration_id: data.get("rollNum"),
+        password: data.get("password"),
+        email: data.get("email"),
+        sex: gender,
+        phone: data.get("phoneNum"),
+        branch: branch,
+        grad_year: gradYear,
+      })
+      .then(function (response) {
+        console.log("user created");
+        console.log(response);
+
+        setShow(true);
+        // window.location.href = "/login";
+      })
+      .catch(function (error) {
+        if (error.response) {
+          alert("User already exists");
+        }
+      });
   };
 
   return (
@@ -188,7 +202,33 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  id="outlined-select-gradYear"
+                  required
+                  fullWidth
+                  id="phoneNum"
+                  label="Phone Number"
+                  name="phoneNum"
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="gender"
+                  select
+                  label="Select"
+                  value={gender}
+                  onChange={handleGenderChange}
+                  helperText="Select your Gender"
+                >
+                  {genders.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="gradYear"
                   select
                   label="Select"
                   value={gradYear}
@@ -204,7 +244,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  id="outlined-select-branch"
+                  id="branch"
                   select
                   fullWidth
                   label="Select"
@@ -219,23 +259,7 @@ export default function SignUp() {
                   ))}
                 </TextField>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  id="outlined-select-gender"
-                  select
-                  label="Select"
-                  value={gender}
-                  onChange={handleGenderChange}
-                  helperText="Select your Gender"
-                >
-                  {genders.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12}>
                 <TextField
                   required
                   fullWidth
@@ -256,16 +280,55 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid
+              container
+              justifyContent="flex-end"
+              style={{ marginBottom: "8%" }}
+            >
               <Grid item>
                 <Link href="/login" variant="body2" sx={{ color: "#FF385C" }}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header>
+                <Modal.Title>Registered Successfully</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Now login and wait for the hostel preference form to open. Till
+                then you can see the list of available hostels to you after
+                loggin in.
+              </Modal.Body>
+              <Modal.Footer>
+                <Link
+                  href="/login"
+                  style={{
+                    marginRight: "5%",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  <Button
+                    style={{ backgroundColor: "#EC5990" }}
+                    variant="primary"
+                    onClick={handleClose}
+                  >
+                    Login
+                  </Button>
+                </Link>
+
+                <Button
+                  style={{ backgroundColor: "#EC5990" }}
+                  variant="primary"
+                  onClick={handleClose}
+                >
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );

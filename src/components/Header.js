@@ -34,9 +34,7 @@ const Header = () => {
                 <NavDropdown.Item href="contactUs">
                   Help & Support
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/helpSupport">
-                  Contact Us
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#footer">Contact Us</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
               </NavDropdown>

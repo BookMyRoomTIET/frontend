@@ -66,34 +66,13 @@ const ProductScreen = () => {
                 className="mySwiper2"
               >
                 <SwiperSlide>
-                  <img src="http://www.thapar.edu/images/hostel/hostelA1.jpg" />
+                  <img src="http://thapar.edu/upload/images/front_hostel_k%281%29.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                  <img src="http://thapar.edu/upload/images/gym_1.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                  <img src="http://thapar.edu/upload/images/outer_k%281%29.jpg" />
                 </SwiperSlide>
               </Swiper>
               <Swiper
@@ -106,34 +85,13 @@ const ProductScreen = () => {
                 className="mySwiper"
               >
                 <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                  <img src="http://thapar.edu/upload/images/front_hostel_k%281%29.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                  <img src="http://thapar.edu/upload/images/gym_1.jpg" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                  <img src="http://thapar.edu/upload/images/outer_k%281%29.jpg" />
                 </SwiperSlide>
               </Swiper>
             </Col>

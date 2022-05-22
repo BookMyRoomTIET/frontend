@@ -8,7 +8,7 @@ const AboutUs = () => {
       <HeaderLanding />
       <div className="about-section">
         <div className="about-header">
-          <h2>About Us</h2>
+          <h2 style={{ color: "black" }}>About Us</h2>
         </div>
         <hr className="about-hr" />
         <div className="about-content">
