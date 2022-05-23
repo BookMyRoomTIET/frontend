@@ -21,11 +21,6 @@ export default function SignIn() {
     event.preventDefault();
     console.log(event);
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-      username: data.get("username"),
-    });
 
     axios
       .post("http://127.0.0.1:8000/user/auth/login/", {
@@ -34,7 +29,6 @@ export default function SignIn() {
         username: data.get("username"),
       })
       .then(function (response) {
-        console.log(response.data.key);
         localStorage.setItem("token", response.data.key);
         window.location.href = "/dashboard";
       })

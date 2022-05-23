@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
@@ -7,6 +8,40 @@ import Logo from "../assets/BookMyRoom-logos_transparent.png";
 import Avatar from "../assets/img_avatar.png";
 
 const Header = () => {
+  const [profileData, setProfileData] = useState([]);
+
+  const [loading, setLoading] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/user/student/", {
+        headers: {
+          Authorization: "Token " + localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProfileData(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const logout = () => {
+    console.log("logging out");
+    axios
+      .post("http://127.0.0.1:8000/user/auth/logout/", {
+        headers: {
+          Authorization: "Token " + localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -36,30 +71,35 @@ const Header = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#footer">Contact Us</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">Logout</NavDropdown.Item>
+                <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Marquee style={{ marginTop: "2%" }} speed="60" pauseOnHover="true">
-        <Link
-          style={{ textDecoration: "none", color: "inherit" }}
-          to="/allocation"
-        >
-          Your Hostel Form Preference is still pending. Click here to fill
-          preference form.
-        </Link>
-      </Marquee>
-      <Marquee style={{ marginTop: "2%" }} speed="60" pauseOnHover="true">
-        <Link
-          style={{ textDecoration: "none", color: "inherit" }}
-          to="/preferenceForm"
-        >
-          Hostel Alloted to you is Hostel K. Click here to select your room.
-        </Link>
-      </Marquee>
+      {profileData.hostel && (
+        <Marquee style={{ marginTop: "2%" }} speed="60" pauseOnHover="true">
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to="/allocation"
+          >
+            Your Hostel Form Preference is still pending. Click here to fill
+            preference form.
+          </Link>
+        </Marquee>
+      )}
+
+      {profileData.hostel === -1 && (
+        <Marquee style={{ marginTop: "2%" }} speed="60" pauseOnHover="true">
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to="/preferenceForm"
+          >
+            Hostel Alloted to you is Hostel K. Click here to select your room.
+          </Link>
+        </Marquee>
+      )}
     </div>
   );
 };

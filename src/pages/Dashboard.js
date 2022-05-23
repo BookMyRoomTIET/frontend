@@ -14,19 +14,24 @@ const Dashboard = () => {
   const [hostelData, setHostelData] = useState([]);
   const [imageData, setImageData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const hostels = [];
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/hostel/")
+      .get("http://127.0.0.1:8000/hostel/available/", {
+        headers: {
+          Authorization: "Token " + localStorage.getItem("token"),
+        },
+      })
       .then((res) => {
-        setHostelData(res.data.Information);
-        setImageData(res.data.images);
+        setHostelData(res.data);
+
         setLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
   return (
     <div>
       <Header />
@@ -53,8 +58,8 @@ const Dashboard = () => {
                       lg={3}
                     >
                       <HostelCard
-                        hostel={hostel}
-                        image={imageData[hostel.hostel_id - 1]}
+                        hostel={hostel.hostel_id}
+                        image={hostel.hostel_id.hostelImage[0].link}
                       />
                     </Col>
                   </>

@@ -48,7 +48,7 @@ const HostelCard = ({ hostel, image }) => {
             <CardMedia
               component="img"
               height="140"
-              image={image.image_link1}
+              image={image}
               alt="green iguana"
             />
           </Link>

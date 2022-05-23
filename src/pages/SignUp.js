@@ -40,11 +40,11 @@ export default function SignUp() {
   ];
   const genders = [
     {
-      value: "M",
+      value: "Male",
       label: "Male",
     },
     {
-      value: "F",
+      value: "Female",
       label: "Female",
     },
   ];
@@ -99,16 +99,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    console.log({
-      name: data.get("firstName") + data.get("lastName"),
-      registration_id: data.get("rollNum"),
-      password: data.get("password"),
-      email: data.get("email"),
-      sex: gender,
-      phone: data.get("phoneNum"),
-      branch: branch,
-      grad_year: gradYear,
-    });
+
     axios
       .post("http://127.0.0.1:8000/user/register/student/", {
         name: data.get("firstName") + data.get("lastName"),
@@ -121,11 +112,8 @@ export default function SignUp() {
         grad_year: gradYear,
       })
       .then(function (response) {
-        console.log("user created");
-        console.log(response);
-
         setShow(true);
-        // window.location.href = "/login";
+        window.location.href = "/login";
       })
       .catch(function (error) {
         if (error.response) {

@@ -65,15 +65,13 @@ const ProductScreen = () => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper2"
               >
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/front_hostel_k%281%29.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/gym_1.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/outer_k%281%29.jpg" />
-                </SwiperSlide>
+                {hostelData.hostelImage.map((image) => (
+                  <>
+                    <SwiperSlide>
+                      <img src={image.link} />
+                    </SwiperSlide>
+                  </>
+                ))}
               </Swiper>
               <Swiper
                 onSwiper={setThumbsSwiper}
@@ -84,15 +82,13 @@ const ProductScreen = () => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
               >
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/front_hostel_k%281%29.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/gym_1.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="http://thapar.edu/upload/images/outer_k%281%29.jpg" />
-                </SwiperSlide>
+                {hostelData.hostelImage.map((image) => (
+                  <>
+                    <SwiperSlide>
+                      <img src={image.link} />
+                    </SwiperSlide>
+                  </>
+                ))}
               </Swiper>
             </Col>
             <Col md={6}>

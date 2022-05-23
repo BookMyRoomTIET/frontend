@@ -8,15 +8,15 @@ import "animate.css";
 
 const Hostels = () => {
   const [hostelData, setHostelData] = useState([]);
-  const [imageData, setImageData] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/hostel/")
       .then((res) => {
-        setHostelData(res.data.Information);
-        setImageData(res.data.images);
+        setHostelData(res.data);
+
         setLoading(false);
       })
       .catch((err) => {
@@ -29,18 +29,24 @@ const Hostels = () => {
       <Container style={{ margin: "10% 1%", overflowX: "hidden" }}>
         <Row>
           {!loading &&
+            hostelData &&
             hostelData.map((hostel) => (
               <>
-                <Col
-                  className="animate__animated animate__backInUp"
-                  key={hostel.hostel_id}
-                  lg={3}
-                >
-                  <HostelCard
-                    hostel={hostel}
-                    image={imageData[hostel.hostel_id - 1]}
-                  />
-                </Col>
+                {hostel.hostelName !== "None" && (
+                  <>
+                    {" "}
+                    <Col
+                      className="animate__animated animate__backInUp"
+                      key={hostel.hostel_id}
+                      lg={3}
+                    >
+                      <HostelCard
+                        hostel={hostel}
+                        image={hostel.hostelImage[0].link}
+                      />
+                    </Col>
+                  </>
+                )}
               </>
             ))}
         </Row>

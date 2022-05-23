@@ -55,7 +55,7 @@ const BookYourRoom = () => {
       <section className="formSection">
         <form onSubmit={handleSubmit(onSubmit)}>
           <Row>
-            <h4>Hostel Allocated: K</h4>
+            <h4>Hostel Allocated: I</h4>
             <p>Select Your Room</p>
             <Col lg={12}>
               <label className="formLabel">Room Number:</label>
@@ -68,9 +68,7 @@ const BookYourRoom = () => {
 
           <Row>
             <Col lg={12}>
-              <img style={{ width: "100%" }} src="images/k1.jpg" alt="room" />
-              <img style={{ width: "100%" }} src="images/k2.jpg" alt="room" />
-              <img style={{ width: "100%" }} src="images/k3.jpg" alt="room" />
+              <img style={{ width: "100%" }} src="images/i1.jpeg" alt="room" />
             </Col>
           </Row>
 
